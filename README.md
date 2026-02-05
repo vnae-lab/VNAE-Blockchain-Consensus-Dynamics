@@ -14,7 +14,7 @@ Classical consensus models often assume symmetry or linear stability. On the oth
 
 VNAE replaces this with a **geometric approach, where stability emerges from network curvature and volume contraction**, not from symmetry or equilibrium tuning.
 
-# Core Dynamic Equation (for this purpose)
+# Core Dynamic Equation
 
 The evolution of node states is governed by:
 
@@ -70,7 +70,7 @@ This places the model between trivial toy graphs and unrealistic fully connected
 
 Each node i is assigned a parameter theta_i.
 
-We can draw some analogies. So, in this context theta represents:
+We can draw some analogies. So, in this context, theta represents:
 
 - Validator inertia
 - Response delay
@@ -84,4 +84,23 @@ As a consequence, VNAE shows that:
 
 - Stability does not require symmetric nodes
 - Local instability does not imply global divergence
-- Geometry dominates local dynamics
+- Geometry dominates local dynamics.
+
+# Geometric Stability Criterion
+
+Instead of eigenvalue-based stability, VNAE uses a curvature-based metric:
+
+K = average over node pairs of:
+|θi − θj| × |A_ij| / (1 + β × (θi + θj))
+
+where:
+
+A_ij is the coupling strength between nodes i and j;
+
+β controls global rigidity;
+
+If **K > 0**, the system is geometrically stable, meaning:
+
+- Phase-space volume contracts
+- Consensus errors decay globally
+- Perturbations cannot amplify indefinitely.
