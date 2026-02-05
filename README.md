@@ -104,3 +104,26 @@ If **K > 0**, the system is geometrically stable, meaning:
 - Phase-space volume contracts
 - Consensus errors decay globally
 - Perturbations cannot amplify indefinitely.
+
+# Key Properties
+
+- No need for full connectivity
+- No symmetry assumptions
+- Robust under persistent noise
+- Scales from tens to hundreds of thousands of nodes
+- Compatible with PoW, PoS, and hybrid models
+
+# Applications
+
+- Blockchain consensus analysis
+- Validator network design
+- Robust gossip protocol modeling
+- Adversarial stress testing
+- Decentralized system certification
+
+# Key Insights
+
+Global consensus stability emerges from geometry and asymmetry, not from symmetry, tuning, or centralized control.
+
+# Reference
+Pereira, D. H. (2025). Riemannian Manifolds of Asymmetric Equilibria: The Victoria-Nash Geometry.
