@@ -30,3 +30,58 @@ L = Directed graph Laplacian representing peer-to-peer communication and influen
 
 p = Persistent external forcing, such as network latency, transaction bursts, adversarial noise, or stochastic delays.
 
+# Network Topology: Interpretation of the 12-Peer Model
+
+This model does not assume a fixed-size blockchain network. Instead, it adopts a local connectivity assumption consistent with production systems.
+
+Each node is modeled as a vertex in a directed graph, with:
+
+- Average degree ≈ 12
+- Roughly 12 active peer connections per node
+- Edges represent state exchange, not full broadcasts
+
+Mapping:
+
+- Nodes → vertices
+- Peer links → directed edges
+- Degree ≈ local neighborhood size
+
+This was an attempt to reflects how real blockchain nodes operate.
+
+**Below we can see why ~12 peers tends to be realistic:**
+
+Well, the empirical observations from production systems show similar regimes:
+
+- Ethereum P2P layer
+- Tendermint and Cosmos gossip
+- Polkadot relay and parachain overlays
+- Byzantine fault-tolerant consensus networks
+
+We also can note that a degree between 10 and 15 provides:
+
+- Fast information propagation
+- Fault tolerance
+- Resistance to partitioning
+- Bounded bandwidth usage
+
+This places the model between trivial toy graphs and unrealistic fully connected networks.
+
+# The Role of Asymmetry (θ)
+
+Each node i is assigned a parameter theta_i.
+
+We can draw some analogies. So, in this context theta represents:
+
+- Validator inertia
+- Response delay
+- Economic weight
+- Slashing sensitivity
+- Hardware or geographic latency
+
+It is important to highlight that the **Asymmetry is not a bug**, it is a **structural feature of real networks**.
+
+As a consequence, VNAE shows that:
+
+- Stability does not require symmetric nodes
+- Local instability does not imply global divergence
+- Geometry dominates local dynamics
